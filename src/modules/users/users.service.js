@@ -28,4 +28,13 @@ export class UserService {
   static async delete() {
     return await user.delete({ status: '' });
   }
+
+  static async findOneByEmail(email) {
+    return await User.findOne({
+      where: {
+        status: true,
+        email: email,
+      },
+    });
+  }
 }
