@@ -30,6 +30,6 @@ router.get('/', findAllUser);
 
 router
   .route('/:id')
-  .get(restrictTo('developer', 'receptionist'), validateExistUser, findOneUser)
+  .get(restrictTo('developer', 'employee'), validateExistUser, findOneUser)
   .patch(validateExistUser, protectAccountOwner, updateUser)
   .delete(validateExistUser, protectAccountOwner, deleteUser);
